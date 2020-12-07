@@ -1,12 +1,7 @@
 #include "model.h"
 
-Model::Model(QString tmpDir) : tmpDir(tmpDir)
+Model::Model(QString tmpDir,AbstractProcess process) : tmpDir(tmpDir), process(process)
 {
-#ifdef _WIN32
-    process = WSLProcess();
-#elif __linux__
-    process = LinuxProcess();
-#endif
 
 }
 
@@ -53,7 +48,7 @@ void Model::initSocket() {
 }
 
 void Model::stopModel() {
-   process.stopModel();
+   process.stopProcess();
 }
 
 void Model::setDataToSend(QString data) { this->dataSent = data; }

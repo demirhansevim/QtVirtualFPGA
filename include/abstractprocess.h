@@ -9,7 +9,7 @@ class AbstractProcess {
 
 public:
     AbstractProcess(){
-        
+
     };
 
     virtual QString makeTmpDir(){};

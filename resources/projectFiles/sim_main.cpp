@@ -2,7 +2,11 @@
 #include "Vtop_wrapper.h"
 #include <iostream>
 #include <memory>
-#include <io.h>
+#ifdef _WIN32
+    #include <io.h>
+#elif __linux__
+    #include <unistd.h>
+#endif
 #include <stdio.h>
 #include <sstream>
 #include <ostream>

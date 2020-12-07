@@ -15,8 +15,9 @@ class Model : public QObject
     Q_OBJECT
 
 public:
-    Model(QString tmpDir);
+    Model(QString tmpDir,AbstractProcess process);
     ~Model();
+    void initSocket();
 
 private:
     bool modelRunning = 0;
@@ -24,8 +25,9 @@ private:
     QUdpSocket *socket;
     QProcess model;
     QString tmpDir;
+    AbstractProcess& process;
 
-    void initSocket();
+
 
 private slots:
     void recvData();
