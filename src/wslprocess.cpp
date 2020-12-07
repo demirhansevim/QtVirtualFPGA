@@ -95,7 +95,7 @@ void compileProcess(QStringList inputFileNames, QString simDelay, QString itPerC
     make.close();
 }
 
-void stopModel()
+void stopProcess()
 {
     if (process.state() == QProcess::Running) {
         process.terminate();

@@ -25,6 +25,7 @@ private:
     QStringList modulesList;
     QString topWrapper;
     QDir copyDir;
+    AbstractProcess& process;
 
     void addTableItem(QString path);
 

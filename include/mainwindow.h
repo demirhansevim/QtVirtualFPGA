@@ -19,7 +19,13 @@
 #include <string>
 #include <iostream>
 #include <stdint.h>
-#include <io.h>
+
+#ifdef _WIN32
+    #include <io.h>
+#elif __linux__
+    #include <unistd.h>
+#endif
+
 
 #include "model.h"
 #include "indexedbutton.h"
@@ -69,6 +75,7 @@ private:
 
     Model *model;
     QTemporaryDir tempDir;
+    AbstractProcess& process;
 
     enum dataID { BUTTON = 0, SWITCH = 1, MOUSEMOVE = 2, MOUSEPRESS = 3, MOUSERELEASE = 4 };
     enum mouseButton {LEFT = 1, RIGHT = 2, MIDDLE = 3 };

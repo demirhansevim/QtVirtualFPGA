@@ -10,7 +10,7 @@ public:
      QString makeTmpDir(){};
      void runProcess(){};
      void compileProcess(QStringList inputFileNames, QString simDelay, QString itPerCycle){};
-     void topModel(){};
+     void stopProcess(){};
 
 
 };
